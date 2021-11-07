@@ -19,8 +19,8 @@ class ApplicationTests {
 		car.setType(CarType.SPORTS);
 		car.setSeatConfiguration(new SeatConfiguration(1, SeatMaterial.LEATHER));
 		CarDto carDTO = CarMapper.INSTANCE.convert(car);
-		assertEquals(car.getMake(), car.getMake());
-		assertEquals(car.getType(), car.getType());
+		assertEquals(car.getMake(), carDTO.getMake());
+		assertEquals(car.getType().toString(), carDTO.getType());
 		assertEquals(car.getSeatConfiguration().getSeatMaterial().toString(),
 				carDTO.getSeats().getMaterial());
 	}
